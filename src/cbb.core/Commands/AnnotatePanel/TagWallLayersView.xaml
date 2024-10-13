@@ -1,0 +1,49 @@
+﻿<Window x:Class="cbb.core.TagWallLayersView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cbb.core"
+        mc:Ignorable="d"
+        Title="TagWallLayersView" Height="400" Width="250" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Margin="5" Header="Tag Properties">
+            <StackPanel Margin="5">
+                <CheckBox x:Name="chbFunction" Content="Function" IsChecked="True"/>
+                <CheckBox Name="chbName"  Content="Name" IsChecked="True"/>
+                <CheckBox Name="chbThickness" Content="Thickness" IsChecked="True"/>
+                <Label Content="Text Note Type"/>
+                <ComboBox x:Name="cbbTextNoteType"
+                    ItemsSource="{Binding TextTypeNote}" 
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding SelectedTextTypeNoteId}"/>
+            </StackPanel>
+        </GroupBox>
+        
+        <GroupBox Grid.Row="1" Margin="5,0,5,0" Header="Units">
+            <StackPanel Margin="5">
+                <Label Content="Unit Type"/>
+                <ComboBox x:Name="cbbUnitType"
+                    ItemsSource="{Binding UnitTypes}" SelectedItem="{Binding SelectedUnitTypes}"
+                          />
+                <Label Content="Decimal Places"/>
+                <ComboBox x:Name="cbbDecimalPlaces"
+                    ItemsSource="{Binding DecimalPlaces}" SelectedItem="{Binding SelectedDecimalPlaces}"/>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5" Height="50" HorizontalAlignment="Right">
+            <Button x:Name="btnOk" Height="30" Width="75" Margin="10,0,0,0" Content="Ok" Click="btnOk_Click "/>
+            <Button x:Name="btnCancel" Height="30" Width="75" Margin="10,0,0,0" Content="Cancel" Click="btnCancel_Click"/>
+        </StackPanel>
+
+    </Grid>
+
+
+</Window>

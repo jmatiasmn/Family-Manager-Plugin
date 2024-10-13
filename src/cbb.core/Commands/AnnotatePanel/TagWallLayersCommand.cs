@@ -28,6 +28,16 @@ namespace cbb.core
         {
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
             Document doc = uidoc.Document;
+            TagWallLayersCommandData userInfo;
+            XYZ point;
+
+            using (var w = new TagWallLayersView(uidoc))
+            {
+                w.ShowDialog();
+
+                userInfo = w.GetInformation();
+
+            };
 
             // check if we are in the Revit project, not in family one.
             if (doc.IsFamilyDocument)
@@ -52,6 +62,12 @@ namespace cbb.core
                 case ViewType.Detail:
                     canCreateTextNoteInView = true;
                     break;
+                case ViewType.Section:
+                    canCreateTextNoteInView = true;
+                    break;
+                case ViewType.Elevation:
+                    canCreateTextNoteInView = true;
+                    break;
                 default:
                     break;
             }
@@ -62,19 +78,18 @@ namespace cbb.core
                 return Result.Cancelled;
             }
 
-            
+
             // Ask user to select one basic wall
             Reference selectionReference = uidoc.Selection
-                .PickObject(ObjectType.Element, new SelectionFilter("Walls"), "Select one basic wall.");
+                .PickObject(ObjectType.Element, "Select one basic wall.");
             Wall wallSelected = doc.GetElement(selectionReference) as Wall;
 
             // Check if wall is type of basic wall.
             if (wallSelected.IsStackedWall)
             {
-                Message.Display("Wall you selected is category of the Stacked Wall.\nIt's not supported by this command",WindowType.Warning);
+                Message.Display("Wall you selected is category of the Stacked Wall.\nIt's not supported by this command", WindowType.Warning);
                 return Result.Cancelled;
             }
-            XYZ point = uidoc.Selection.PickPoint("Pick text note location point.");
 
             //Acess list of wall layers;
             IList<CompoundStructureLayer> layers = wallSelected.WallType.
@@ -86,7 +101,20 @@ namespace cbb.core
             foreach (CompoundStructureLayer layer in layers)
             {
                 Material material = doc.GetElement(layer.MaterialId) as Material;
-                msg.AppendLine(layer.Function.ToString()+" "+material.Name+" "+ layer.Width.ToString());
+
+                if (userInfo.Function)
+                {
+                    msg.Append(layer.Function.ToString());
+                }
+                if (userInfo.Name)
+                {
+                    msg.Append(" " + material.Name);
+                }
+                if (userInfo.Function)
+                {
+                    msg.Append(" " + LengthUnitConverter.ConvertToMetric(layer.Width,userInfo.UnitType,userInfo.Decimals).ToString());
+                }
+                msg.AppendLine();
             }
 
             //Create Text Note Options.
@@ -94,7 +122,7 @@ namespace cbb.core
             {
                 VerticalAlignment = VerticalTextAlignment.Top,
                 HorizontalAlignment = HorizontalTextAlignment.Left,
-                TypeId = doc.GetDefaultElementTypeId(ElementTypeGroup.TextNoteType)
+                TypeId = userInfo.TextTypeId
             };
 
             //Open Revit document transaction to creatte new Text Note element.
@@ -102,6 +130,19 @@ namespace cbb.core
             using (Transaction t = new Transaction(doc))
             {
                 t.Start("Tag Wall Layers Command");
+
+                if (activeView.ViewType == ViewType.Elevation || activeView.ViewType == ViewType.Section)
+                {
+                    Plane plane = Plane.CreateByNormalAndOrigin(activeView.ViewDirection, activeView.Origin);
+                    SketchPlane sketchPlane = SketchPlane.Create(doc, plane);
+                    activeView.SketchPlane = sketchPlane;
+                    point = uidoc.Selection.PickPoint("Pick text note location point.");
+                }
+                else
+                {
+                    point = uidoc.Selection.PickPoint("Pick text note location point.");
+                }
+
                 var textNote = TextNote.Create(doc, activeView.Id, point, msg.ToString(), opt);
                 t.Commit();
             }
