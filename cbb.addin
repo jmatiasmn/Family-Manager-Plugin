@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name></Name>
+		<Assembly></Assembly>
+		<AddInId>BB51AD72-F48B-4FFE-A0A7-6CACA361BB97</AddInId>
+		<FullClassName></FullClassName>
+		<VendorId></VendorId>
+		<Publisher></Publisher>
+		<VendorDescription></VendorDescription>
+	</AddIn>
+</RevitAddIns>
