@@ -47,7 +47,10 @@
     <Compile Include="ResourceAssembly.cs" />
     <Compile Include="ResourceImage.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Icons\hide-32.png" />
+    <EmbeddedResource Include="Images\Icons\show-32.png" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\Icons\icon_img_32x32.png" />
     <EmbeddedResource Include="Images\Icons\tooltip_img_320x320.png" />

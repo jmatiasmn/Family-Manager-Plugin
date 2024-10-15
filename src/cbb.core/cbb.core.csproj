@@ -58,14 +58,17 @@
     <Compile Include="Commands\AnnotatePanel\TagWallLayersView.xaml.cs">
       <DependentUpon>TagWallLayersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\FamilyManager\HideFamilyManagerCommand.cs" />
+    <Compile Include="Commands\FamilyManager\ShowFamilyManagerCommand.cs" />
+    <Compile Include="Commands\Helpers\BaseIExternalCommand.cs" />
     <Compile Include="Commands\Helpers\Message.cs" />
     <Compile Include="Commands\Helpers\SelectionFilter.cs" />
+    <Compile Include="Commands\PaneIdentifiers.cs" />
     <Compile Include="Commands\Type\LengthUnitType.cs" />
     <Compile Include="Commands\Type\WindowType.cs" />
     <Compile Include="Commands\Utility\LengthUnitConverter.cs" />
     <Compile Include="CoreAssembly.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueConverter\EnumConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Commands\AnnotatePanel\TagWallLayersView.xaml">

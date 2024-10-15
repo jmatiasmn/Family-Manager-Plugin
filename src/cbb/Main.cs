@@ -1,5 +1,8 @@
-﻿using Autodesk.Revit.DB;
+﻿using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
+using cbb.ui;
 using System;
 using System.Reflection;
 using System.Windows.Media.Imaging;
@@ -23,8 +26,12 @@ namespace cbb
             SetupInterface setupInterface = new SetupInterface();
             setupInterface.Initialize(application);
 
+            application.ControlledApplication.ApplicationInitialized += DockablePaneRegisters;
+
             return Result.Succeeded;
         }
+
+
         /// <summary>
         /// Called when Revit shutdown.
         /// </summary>
@@ -36,6 +43,14 @@ namespace cbb
             return Result.Succeeded;
         }
 
+        #endregion
+        #region private methods
+
+        private void DockablePaneRegisters(object sender, ApplicationInitializedEventArgs e)
+        {
+            RegisterFamilyManagerCommand familyManagerRegisterCommand = new RegisterFamilyManagerCommand();
+            familyManagerRegisterCommand.Execute(new UIApplication(sender as Application));
+        }
         #endregion
     }
 }

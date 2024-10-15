@@ -35,10 +35,16 @@ namespace cbb
         {
             string tabName = "Circle's BIM Blog";
             app.CreateRibbonTab(tabName);
+            #region Panels
 
             //Create the panels
             RibbonPanel annotateCommandsPanel = app.CreateRibbonPanel(tabName, "Annotation Commands");
-            app.CreateRibbonPanel(tabName, "Ferramentas de Ambiente");
+            RibbonPanel managerComamandsPanel = app.CreateRibbonPanel(tabName, "Family Manager Commands");
+
+            #endregion
+
+
+            #region Annotate Panel
 
             //Populate button data model.
             var TagWallButtonData = new RevitPushButtonDataModel()
@@ -52,7 +58,44 @@ namespace cbb
             };
 
             PushButton tagWallButton = RevitPushButton.Create(TagWallButtonData);
+            #endregion
 
+
+            #region Manager
+
+
+            //Populate button data model.
+            var familyManagerShowButtonData = new RevitPushButtonDataModel()
+            {
+                Label = "Show Family\nManager",
+                Panel = managerComamandsPanel,
+                Tooltip = "This is some tooltip text, replace it with real one latter",
+                IconImageName = "show-32.png",
+                TooltipImageName = "tooltip_img_320x320.png",
+                CommandNamespacePath = ShowFamilyManagerCommand.GetPath()
+            };
+
+            PushButton familyManagerShowButton = RevitPushButton.Create(familyManagerShowButtonData);
+
+            var familyManagerHideButtonData = new RevitPushButtonDataModel()
+            {
+                Label = "Hide Family\nManager",
+                Panel = managerComamandsPanel,
+                Tooltip = "This is some tooltip text, replace it with real one latter",
+                IconImageName = "hide-32.png",
+                TooltipImageName = "tooltip_img_320x320.png",
+                CommandNamespacePath = HideFamilyManagerCommand.GetPath()
+            };
+
+            PushButton familyManagerHideButton = RevitPushButton.Create(familyManagerHideButtonData);
+
+
+
+
+
+
+
+            #endregion
         }
         #endregion
     }
