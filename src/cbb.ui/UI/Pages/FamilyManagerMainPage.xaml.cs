@@ -1,4 +1,5 @@
 ﻿using Autodesk.Revit.UI;
+using cbb.core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace cbb.ui
         public FamilyManagerMainPage()
         {
             InitializeComponent();
+            //Set data context for main application page.
+            DataContext = new FamilyManagerMainPageViewModel();
         }
         /// <summary>
         /// Performs application-defined tasks associated with freein, releasing or resetting unmanaged resources.

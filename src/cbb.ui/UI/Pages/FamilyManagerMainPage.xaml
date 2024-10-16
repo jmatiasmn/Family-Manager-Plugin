@@ -5,16 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:cbb.ui"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="300" d:DesignWidth="300"
       Title="FamilyManagerMainPage">
 
-    <Grid Background="CornflowerBlue">
-        <TextBlock Text="Hello from dockable pane..."
-                   Foreground="White"
-                   FontSize="18"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   />
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Family" Command="{Binding FamilyBtnCommand}"/>
+            <Button Grid.Column="1" Content="Preferences" Command="{Binding PreferencesBtnCommand}"/>
+        </Grid>
+
+        <Border Grid.Row="1" Background="PaleVioletRed"/>
+        
 
     </Grid>
 </Page>

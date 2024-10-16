@@ -30,7 +30,7 @@ namespace cbb.core
         {
             DockablePaneId dpId = new DockablePaneId(PaneIdentifiers.ManagerPaneIdentifier());
             var dp = commandData.Application.GetDockablePane(dpId);
-            dp.Show();
+            dp.Hide();
             return Result.Succeeded;
         }
 
