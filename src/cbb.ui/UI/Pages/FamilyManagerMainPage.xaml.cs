@@ -26,7 +26,7 @@ namespace cbb.ui
         {
             InitializeComponent();
             //Set data context for main application page.
-            DataContext = new FamilyManagerMainPageViewModel();
+           DataContext = new FamilyManagerMainPageViewModel();
         }
         /// <summary>
         /// Performs application-defined tasks associated with freein, releasing or resetting unmanaged resources.

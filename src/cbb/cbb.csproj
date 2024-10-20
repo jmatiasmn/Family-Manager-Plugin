@@ -90,4 +90,12 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(AppData)\Autodesk\Revit\Addins\2023\cbb" mkdir "$(AppData)\Autodesk\Revit\Addins\2023\cbb"
+
+xcopy /y "$(ProjectDir)$(OutDir)*.dll" "$(AppData)\Autodesk\Revit\Addins\2023\cbb"
+
+xcopy /y "$(SolutionDir)\cbb.addin" "$(AppData)\Autodesk\Revit\Addins\2023"
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
 	<AddIn Type="Application">
-		<Name></Name>
-		<Assembly></Assembly>
-		<AddInId>BB51AD72-F48B-4FFE-A0A7-6CACA361BB97</AddInId>
-		<FullClassName></FullClassName>
-		<VendorId></VendorId>
-		<Publisher></Publisher>
-		<VendorDescription></VendorDescription>
+		<Name>Circle's BIM Revit API Plugin Development</Name>
+		<Assembly>cbb/cbb.dll</Assembly>
+		<AddInId>3B80C87B-E6FF-4D4B-A9E8-962FAD5D203A</AddInId>
+		<FullClassName>cbb.Main</FullClassName>
+		<VendorId>Cbb</VendorId>
+		<Publisher>João Matias</Publisher>
+		<VendorDescription>João Matias, jmatiasmn@gmail.com</VendorDescription>
 	</AddIn>
 </RevitAddIns>

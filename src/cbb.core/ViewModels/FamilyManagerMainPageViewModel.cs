@@ -1,8 +1,8 @@
 ﻿using Autodesk.Revit.UI;
 using cbb.core;
-using cbb.core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +10,14 @@ using System.Windows.Input;
 
 namespace cbb.core
 {
-    public class FamilyManagerMainPageViewModel
+    public class FamilyManagerMainPageViewModel :BaseViewModel
     {
 
         #region public properties
-        ApplicationPageType CurrentPage { get; set; } = ApplicationPageType.Family;
+
+        public ApplicationPageType CurrentPage { get; set; } = ApplicationPageType.Family;
         #endregion
+
         #region commands
 
         /// <summary>
@@ -43,21 +45,9 @@ namespace cbb.core
         /// </summary>
         public FamilyManagerMainPageViewModel()
         {
-            FamilyBtnCommand = new RouteCommands(FamilyBtnExecute);
-            PreferencesBtnCommand = new RouteCommands(PreferencesBtnExecute);
+            FamilyBtnCommand = new RouteCommands(() => CurrentPage = ApplicationPageType.Family);
+            PreferencesBtnCommand = new RouteCommands(() => CurrentPage = ApplicationPageType.Preferences);
         }
-
-        #region private methods
-
-        private void FamilyBtnExecute()
-        {
-            TaskDialog.Show("teste", "teste");
-        } private void PreferencesBtnExecute()
-        {
-            TaskDialog.Show("test2e", "teste2");
-        }
-        
-        #endregion
 
         #endregion
 
