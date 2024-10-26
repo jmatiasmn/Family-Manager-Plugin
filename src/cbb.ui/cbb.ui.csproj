@@ -79,12 +79,14 @@
     <Compile Include="Revit\Register\RegisterFamilyManagerCommand.cs" />
     <Compile Include="Revit\RevitPushButton.cs" />
     <Compile Include="Revit\RevitPushButtonDataModel.cs" />
+    <Compile Include="UI\Animation\PageAnimationType.cs" />
     <Compile Include="UI\Controls\Family\FamilyItemControl.xaml.cs">
       <DependentUpon>FamilyItemControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\Family\FamilyListControl.xaml.cs">
       <DependentUpon>FamilyListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Pages\Base\BasePage.cs" />
     <Compile Include="UI\Pages\FamilyManagerMainPage.xaml.cs">
       <DependentUpon>FamilyManagerMainPage.xaml</DependentUpon>
     </Compile>

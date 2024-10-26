@@ -18,7 +18,7 @@ namespace cbb.ui
     /// <summary>
     /// Interaction logic for PreferencesPage.xaml
     /// </summary>
-    public partial class PreferencesPage : Page
+    public partial class PreferencesPage : BasePage
     {
         public PreferencesPage()
         {
