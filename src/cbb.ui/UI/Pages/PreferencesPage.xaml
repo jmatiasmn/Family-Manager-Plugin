@@ -8,8 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PreferencesPage">
 
-    <Grid Background="LimeGreen">
-        <TextBlock Text="ola da preferencespage" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
+    <local:BasePage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../App.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:BasePage.Resources>
+
+
+    <Grid Background="{StaticResource MainBackgroundBrush}">
+        <TextBlock Text="ola da preferencespage" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" 
+                   FontSize="{StaticResource ExtraLargeFontSize}" Foreground="{StaticResource RedFontBursh}"/>
 
     </Grid>
 </local:BasePage>

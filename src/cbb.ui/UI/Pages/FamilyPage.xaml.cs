@@ -12,6 +12,7 @@ namespace cbb.ui
             InitializeComponent();
             //List model binded to data context.
             DataContext = new FamilyListViewModel();
+            Animation = PageAnimationType.Fade;
         }
     }
 }

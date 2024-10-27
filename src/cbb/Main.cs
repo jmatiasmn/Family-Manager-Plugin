@@ -44,6 +44,7 @@ namespace cbb
         }
 
         #endregion
+
         #region private methods
 
         private void DockablePaneRegisters(object sender, ApplicationInitializedEventArgs e)

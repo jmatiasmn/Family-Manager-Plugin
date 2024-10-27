@@ -6,13 +6,22 @@
              xmlns:local="clr-namespace:cbb.ui"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../../App.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Background="{StaticResource MainBackgroundBrush}">
         <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto">
             <ItemsControl ItemsSource="{Binding Items}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="0 3">
-                            <local:FamilyItemControl/>
+                        <Border Padding="0 1">
+                            <local:FamilyItemControl Height="43"/>
                         </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

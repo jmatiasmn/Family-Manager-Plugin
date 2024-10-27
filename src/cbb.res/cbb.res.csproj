@@ -55,5 +55,44 @@
     <EmbeddedResource Include="Images\Icons\icon_img_32x32.png" />
     <EmbeddedResource Include="Images\Icons\tooltip_img_320x320.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-Light.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-Medium.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-MediumItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-Bold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-BoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-ExtraBold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-Italic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-Light.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-LightItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-Medium.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-MediumItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-Regular.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-SemiBold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_Condensed-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-Bold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-BoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-ExtraBold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-Italic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-Light.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-LightItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-Medium.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-MediumItalic.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-Regular.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-SemiBold.ttf" />
+    <Resource Include="Fonts\OpenSans\OpenSans_SemiCondensed-SemiBoldItalic.ttf" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,13 +6,47 @@
              xmlns:local="clr-namespace:cbb.ui"
              mc:Ignorable="d" 
              d:DesignHeight="60" d:DesignWidth="300">
-    <Grid Background="LightGray">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
-        
-        <TextBlock Grid.Row="0" Text="{Binding Name}" FontSize="12"/>
-        <TextBlock Grid.Row="1" Text="{Binding FullPath}" FontSize="9"/>
-    </Grid>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../../App.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="{StaticResource MainBordersBrush}" BorderThickness="1">
+        <Grid Background="{StaticResource MainBackgroundBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="3"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="{Binding Name}" 
+                   TextTrimming="CharacterEllipsis"
+                   Foreground="{StaticResource OrangeFontBursh}"
+                   FontFamily="{StaticResource OpenSansLite}"
+                   FontSize="{StaticResource RegularFontSize}"/>
+
+            <TextBlock Grid.Row="1" Text="{Binding FullPath}" 
+                   TextTrimming="CharacterEllipsis"
+                   Foreground="{StaticResource GrayFontBursh}"
+                   FontFamily="{StaticResource OpenSansLite}"
+                   FontSize="{StaticResource SmallFontSize}"
+                   />
+            <!--Type indicator bar-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                        Background="OrangeRed"
+                        Height="3"/>
+            </Grid>
+        </Grid>
+
+    </Border>
 </UserControl>

@@ -23,6 +23,8 @@ namespace cbb.ui
         public PreferencesPage()
         {
             InitializeComponent();
+
+            Animation = PageAnimationType.Fade;
         }
     }
 }
