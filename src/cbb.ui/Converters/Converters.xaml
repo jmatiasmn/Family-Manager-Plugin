@@ -3,5 +3,6 @@
                     xmlns:local="clr-namespace:cbb.ui"
                     >
     <local:MainApplicationPageValueConverter x:Key="MainPageConverter" />
+    <local:ItemTypeToColorValueConverter x:Key="ItemTypeToColor" />
 
 </ResourceDictionary>

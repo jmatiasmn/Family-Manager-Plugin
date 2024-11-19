@@ -68,12 +68,15 @@
     <Compile Include="Commands\FamilyManager\HideFamilyManagerCommand.cs" />
     <Compile Include="Commands\FamilyManager\ShowFamilyManagerCommand.cs" />
     <Compile Include="Commands\Helpers\BaseIExternalCommand.cs" />
+    <Compile Include="Commands\Helpers\DocumentExtensions.cs" />
     <Compile Include="Commands\Helpers\FamilyList.cs" />
+    <Compile Include="Commands\Helpers\ItemTypeHelper.cs" />
     <Compile Include="Commands\Helpers\Message.cs" />
     <Compile Include="Commands\Helpers\PathHelpers.cs" />
     <Compile Include="Commands\Helpers\SelectionFilter.cs" />
     <Compile Include="Commands\PaneIdentifiers.cs" />
     <Compile Include="Commands\Type\ApplicationPageType.cs" />
+    <Compile Include="Commands\Type\ItemType.cs" />
     <Compile Include="Commands\Type\LengthUnitType.cs" />
     <Compile Include="Commands\Type\WindowType.cs" />
     <Compile Include="Commands\Utility\LengthUnitConverter.cs" />

@@ -33,14 +33,17 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Content="Family"
-                    Command="{Binding FamilyBtnCommand}"/>
+                    Command="{Binding FamilyBtnCommand}"
+                    Style="{StaticResource MainButton}"/>
 
             <Button Grid.Column="1" Content="Preferences"
-                    Command="{Binding PreferencesBtnCommand}"/>
+                    Command="{Binding PreferencesBtnCommand}"
+                    Style="{StaticResource MainButton}"/>
 
         </Grid>
 
-        <Border Grid.Row="1" >
+        <Border Grid.Row="1" 
+                Padding="0 0 0 6">
 
             <Frame x:Name="MainPageFrame" Content="{Binding CurrentPage, Converter={StaticResource MainPageConverter}}"
                    NavigationUIVisibility="Hidden"

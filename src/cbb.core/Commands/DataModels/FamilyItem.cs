@@ -21,9 +21,9 @@ namespace cbb.core
         /// </summary>
         public string Name => PathHelpers.GetFileName(FullPath);
         /// <summary>
-        /// Gets or sets a value indicating wheter this instance is family.
+        /// Gets the type of item based on full path.
         /// </summary>
-        public bool IsFamily { get; set; }
+        public ItemType Type => ItemTypeHelper.GetType(FullPath);
 
         #endregion
 

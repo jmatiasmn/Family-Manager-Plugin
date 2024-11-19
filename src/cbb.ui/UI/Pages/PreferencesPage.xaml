@@ -21,7 +21,7 @@
         <TextBlock Text="ola da preferencespage" 
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" 
-                   FontSize="{StaticResource ExtraLargeFontSize}" Foreground="{StaticResource RedFontBursh}"/>
+                   FontSize="{StaticResource ExtraLargeFontSize}" Foreground="{StaticResource RedFontBrush}"/>
 
     </Grid>
 </local:BasePage>
